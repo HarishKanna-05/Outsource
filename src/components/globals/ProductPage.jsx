@@ -4,14 +4,17 @@ const Pages = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Image Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
+        <div className="grid grid-cols-2 gap-4 relative">
           <div className="col-span-2 bg-gray-200 h-64"></div>{" "}
           {/* Large Image */}
-          {[...Array(3)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <div key={i} className="bg-gray-200 w-full h-32"></div>
           ))}
-          <button className="bg-gray-200 w-full h-32">View All Images</button>
+          <button className="absolute right-6 bottom-6 bg-gray-300 hover:bg-gray-400 rounded-md p-2 m-2">
+            View photos
+          </button>
+          {/* <button className="bg-gray-200 w-full h-30 hover:bg-slate-100"></button> */}
         </div>
 
         {/* Content Section */}
