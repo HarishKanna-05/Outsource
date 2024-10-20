@@ -59,7 +59,7 @@ function Navbar() {
                   <p className="font-semibold">zoey@example.com</p>
                 </DropdownItem>
                 <DropdownItem key="user">User</DropdownItem>
-                <DropdownItem key="privacy">Privacy</DropdownItem>
+                <DropdownItem key="favorite">Favorite</DropdownItem>
                 <DropdownItem key="logout" color="danger">
                   Log Out
                 </DropdownItem>

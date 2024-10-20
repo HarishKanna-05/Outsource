@@ -10,11 +10,10 @@ function Search() {
             isClearable
             className='max-w-lg mx-28'
             endContent={<IoSearch />}
-            placeholder="Search"
-            />
-                    <Button className='font-semibold' variant="flat" radius="full">
+            placeholder="Search"/>
+            <Button className='font-semibold' variant="flat" radius="full">
             My Rentals
-        </Button>
+            </Button>
         </div>
     </div>
   )
