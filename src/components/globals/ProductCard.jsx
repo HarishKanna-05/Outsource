@@ -1,67 +1,61 @@
-import React from 'react'
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
-import { Heart } from "lucide-react"
-import { useState } from 'react'
+import React, { useState } from "react";
 
-
-function ProductCard() {
-
-  const [isLiked, setIsLiked] = useState(false)
-
-  const toggleLike = () => {
-    setIsLiked(!isLiked)
-  }
+function ProductCard({ product }) {
+  const [isLiked, setIsLiked] = useState(false);
 
   return (
-    <div>
-      <Card isPressable onPress={() => console.log("item pressed")} className="py-4">
-        <CardBody className="overflow-visible py-2">
-          <Image
-            alt="Card background"
-            className="object-cover rounded-xl"
-            src="https://nextui.org/images/hero-card-complete.jpeg"
-            width={200}
-            height={200}
+    <div className="min-w-[300px] h-[600px]  overflow-y-auto">
+      <div className="relative bg-white rounded-lg shadow-md p-4">
+        <div className="relative w-full h-[200px] mb-4">
+          <img
+            src={product.thumbnail}
+            alt={product.title}
+            className="w-full h-full object-cover rounded-lg"
           />
-        </CardBody>
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <Button
-            isIconOnly
-            aria-label={isLiked ? "Unlike" : "Like"}
-            variant="light"
-            onPress={toggleLike}
+          <button
+            onClick={() => setIsLiked(!isLiked)}
             className={`
               absolute
+              top-4
               right-4
-              group
+              p-2
+              rounded-full
+              bg-white
+              shadow-md
               transition-all
               duration-300
               hover:bg-pink-100
-              active:bg-pink-200
-              ${isLiked ? 'text-pink-500' : 'text-gray-500'}
+              ${isLiked ? "text-pink-500" : "text-gray-500"}
             `}
+            aria-label={isLiked ? "Unlike" : "Like"}
           >
-            <Heart
+            <svg
               className={`
                 w-6
                 h-6
                 transition-all
                 duration-300
-                ${isLiked ? 'fill-current' : 'fill-none'}
-                group-hover:scale-110
-                group-active:scale-95
+                ${isLiked ? "fill-current" : "fill-none"}
+                stroke-current
               `}
-            />
-          </Button>
-          <div className="text-md uppercase font-extrabold">JBL Headset</div>
-          <div className="text-sm">Headset</div>
-          <div className="font-bold text-xl">₹ 100/hr</div>
-          <div className="text-sm">Anna Nagar</div>
-        </CardHeader>
-      </Card>
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-lg font-bold uppercase">{product.title}</h3>
+          <p className="text-sm text-gray-600">{product.category}</p>
+          <p className="text-xl font-bold">${product.price}</p>
+          <p className="text-sm text-gray-600">{product.brand}</p>
+          <p className="text-sm text-gray-700 mt-2">{product.description}</p>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;

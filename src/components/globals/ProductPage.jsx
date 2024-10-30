@@ -5,11 +5,11 @@ const Pages = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Image Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
-        <div className="grid grid-cols-2 gap-4 relative">
-          <div className="col-span-2 bg-gray-200 h-64"></div>{" "}
+        <div className="grid grid-cols-4 relative">
+          <div className="col-span-4 bg-gray-200 h-96"></div>{" "}
           {/* Large Image */}
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="bg-gray-200 w-full h-32"></div>
+            <div key={i} className="bg-gray-200  w-24 h-24"></div>
           ))}
           <button className="absolute right-6 bottom-6 bg-gray-300 hover:bg-gray-400 rounded-md p-2 m-2">
             View photos
